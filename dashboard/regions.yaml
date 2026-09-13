@@ -1,0 +1,26 @@
+# Region registry for the Hunt stage. Edit here or in the dashboard (Hunt > region > Edit, or New region).
+# A region = which portal CLIs to run, with which per-portal flags and locations, and its search queries.
+# Ships blank on purpose: no queries and no country. Fill queries by hand, or from your profile on the
+# Import page ("Tailor hunt to my profile"). Portal flag names are the CLI's own flags
+# (see .agents/skills/<skill>/SKILL.md); `true` means a bare flag.
+regions:
+  - id: remote
+    label: Remote
+    queries: []
+    portals:
+      - skill: linkedin-search
+        locations: [Remote]
+        flags: {jobage: 14, remote: remote, limit: 10}
+      - skill: freehire-search
+        flags: {region: global, remote: remote, jobage: 14, limit: 25, no-description: true}
+
+# Template for a country or city region. Copy, uncomment and fill in.
+#  - id: my-country
+#    label: "[Country]"
+#    queries: ["[Job title]", "[Another title]", "[Key skill]"]
+#    portals:
+#      - skill: linkedin-search
+#        locations: ["[City, Country]", "[Another city, Country]"]
+#        flags: {jobage: 14, limit: 10}
+#      - skill: freehire-search            # tech-only aggregator; region codes: global, eu, us, apac, latam, cis
+#        flags: {region: "[code]", country: "[ISO-3166 alpha-2, e.g. DE,GB]", jobage: 14, limit: 25, no-description: true}

@@ -116,3 +116,7 @@ company_research/*.json
 
 # Brainstorm mockups (superpowers visual companion) - never ship
 .superpowers/
+
+# Fork additions (dashboard): per-machine Claude Code permission overrides never ship.
+# README screenshots live in docs/screenshots/ as .webp so no image rule above needs a negation.
+.claude/settings.local.json
